@@ -14,8 +14,8 @@ while True:
         artist = input("Ijodkor: ")
 
         database.cursor.execute(
-            "INSERT INTO songs (name, artist) VALUES (?, ?)",
-            (name, artist)
+            "INSERT INTO songs (name, artist, minut, hajmi) VALUES (?, ?, ?, ?)",
+            (name, artist, 0, 0)
         )
         database.db.commit()
 
@@ -38,10 +38,7 @@ while True:
             )
             database.db.commit()
 
-            # if database.cursor.rowcount:
-            #     print("Qo'shiq o'chirildi!")
-            # else:
-            #     print("Bunday ID mavjud emas!")
+            print("Qo'shiq o'chirildi!")
         else:
             print("ID -> raqam bo'lishi kerak!")
 
