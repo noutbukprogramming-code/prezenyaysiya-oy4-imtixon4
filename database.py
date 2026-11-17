@@ -6,14 +6,15 @@ cursor = db.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS songs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name VARCHAR(100) ,
+    name VARCHAR(100),
     artist VARCHAR(100),
-    minut INTEGER,
+    minutes INTEGER,
     hajmi INTEGER
-    )
+)
 """)
 
-cursor.execute("""INSERT INTO songs (name, artist, minutes, hajmi) VALUES
+cursor.execute("""
+INSERT INTO songs (name, artist, minutes, hajmi) VALUES
     ("Janona", "Shahzoda", 4, 5),
     ("Keragimsan", "Ulug'bek Rahmatullayev", 5, 6),
     ("Keragimsan", "Ulug'bek Rahmatullayev", 5, 6),
@@ -27,4 +28,6 @@ cursor.execute("""INSERT INTO songs (name, artist, minutes, hajmi) VALUES
     ("Layli", "Munisa Rizayeva", 5, 6),
     ("Yurak", "Botir Qodirov", 4, 5)
 """)
+
 db.commit()
+db.close()

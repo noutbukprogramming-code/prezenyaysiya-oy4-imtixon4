@@ -14,7 +14,7 @@ while True:
         artist = input("Ijodkor: ")
 
         database.cursor.execute(
-            "INSERT INTO songs (name, artist, minut, hajmi) VALUES (?, ?, ?, ?)",
+            "INSERT INTO songs (name, artist, minutes, hajmi) VALUES (?, ?, ?, ?)",
             (name, artist, 0, 0)
         )
         database.db.commit()
